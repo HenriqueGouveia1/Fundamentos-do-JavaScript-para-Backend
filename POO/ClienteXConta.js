@@ -4,18 +4,20 @@ class Cliente{
 }
 
 class Conta{
-    saldo;
+    #saldo = 0;
     numConta;
 
     depositar(tanto){
         if(tanto >0){
-            this.saldo += tanto;
+            this.#saldo += tanto;
+            console.log("sacou" + this.numConta, this.#saldo)
         }
     }
 
     sacar(tanto){
-        if(tanto <= this.saldo ){
-            this.saldo -= tanto;
+        if(tanto <= this.#saldo ){
+            this.#saldo -= tanto;
+            console.log("sacou" + this.numConta, this.#saldo)
         }
     }
 }
@@ -26,7 +28,7 @@ cliente1.cpf = "01920129012";
 
 const conta1= new Conta;
 conta1.numConta= 1
-conta1.saldo= 10
+
 
 const cliente2 = new Cliente;
 cliente2.nome='cliente2'
@@ -34,10 +36,10 @@ cliente2.cpf= '01920129012'
 
 const conta2= new Conta;
 conta2.numConta= 2
-conta2.saldo = 20
 
-console.log(conta2.saldo)
+
+console.log(conta2)
 conta2.depositar(30)
-console.log(conta2.saldo)
+console.log(conta2)
 conta2.sacar(30)
-console.log(conta2.saldo)
+console.log(conta2)
