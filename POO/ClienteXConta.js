@@ -8,17 +8,15 @@ class Conta{
     numConta;
 
     depositar(tanto){
-        if(tanto >0){
-            this.#saldo += tanto;
-            console.log("sacou" + this.numConta, this.#saldo)
-        }
+        if(tanto <0) return;
+        this.#saldo += tanto;
+        console.log("sacou" + this.numConta, this.#saldo)
     }
 
     sacar(tanto){
-        if(tanto <= this.#saldo ){
-            this.#saldo -= tanto;
-            console.log("sacou" + this.numConta, this.#saldo)
-        }
+        if(tanto > this.#saldo ) return;
+        this.#saldo -= tanto;
+        console.log("sacou" + this.numConta, this.#saldo)
     }
 }
 
